@@ -40,7 +40,7 @@ class JDF extends BaseJDF
     public function setPrintFile(string $file_name, int $quantity = 1)
     {
         // add a layout element and filespec for this document within the ResourcePool
-        $runlist = $this->resourcePool()->runList();
+        $runlist = $this->resourcePool()->addChild('RunList');
         $runlist->addAttribute('Class', 'Parameter');
         $runlist->addAttribute('ID', 'RL1');
         $runlist->addAttribute('Status', 'Available');
