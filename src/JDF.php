@@ -66,10 +66,10 @@ class JDF extends BaseJDF
         $component->addAttribute('ID', 'C1');
         $component->addAttribute('Status', 'Available');
 
-        $digialPrintingParams = $this->resourcePool()->addChild('DigitalPrintingParams');
-        $digialPrintingParams->addAttribute('Class', 'Parameter');
-        $digialPrintingParams->addAttribute('ID', 'DP1');
-        $digialPrintingParams->addAttribute('Status', 'Available');
+        $digitalPrintingParams = $this->resourcePool()->addChild('DigitalPrintingParams');
+        $digitalPrintingParams->addAttribute('Class', 'Parameter');
+        $digitalPrintingParams->addAttribute('ID', 'DP1');
+        $digitalPrintingParams->addAttribute('Status', 'Available');
 
         $layoutPreparationParams = $this->resourcePool()->addChild('LayoutPreparationParams');
         $layoutPreparationParams->addAttribute('Class', 'Parameter');
@@ -77,7 +77,7 @@ class JDF extends BaseJDF
         $layoutPreparationParams->addAttribute('Status', 'Available');
 
         $this->linkResource('LayoutPreparationParams', 'Input', ['CombinedProcessIndex' => '0']);
-        $this->linkResource('DigialPrintingParams', 'Input', ['CombinedProcessIndex' => '1']);
+        $this->linkResource('DigitalPrintingParams', 'Input', ['CombinedProcessIndex' => '1']);
     }
 
     /**
