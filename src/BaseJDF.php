@@ -105,10 +105,9 @@ class BaseJDF
     {
         // These are used to generate the initial XML field attributes
         $xml_encoding = '<?xml version="1.0" encoding="UTF-8"?>';
-        $xmlns_xsi = 'http://www.w3.org/2001/XMLSchema-instance';
 
         // Initialize the JMF or JDF root node
-        $root = new SimpleXMLElement($xml_encoding . '<JDF/>', \LIBXML_NOEMPTYTAG);
+        $root = new SimpleXMLElement($xml_encoding . '<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:EFI="http://www.efi.com/efijdf" xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_1_Types" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />', \LIBXML_NOEMPTYTAG);
         $root->addAttribute('Activation', 'Active');
         $root->addAttribute('ID', 'ID1');
         $root->addAttribute('JobID', 'J_000000');
@@ -118,13 +117,6 @@ class BaseJDF
         $root->addAttribute('Type', 'Combined');
         $root->addAttribute('Types', 'LayoutPreparation DigitalPrinting');
         $root->addAttribute('Version', '1.3');
-        $root->addAttribute('xmlns', 'http://www.CIP4.org/JDFSchema_1_1');
-        $root->addAttribute('xmlns:EFI', 'http://www.efi.com/efijdf');
-        $root->addAttribute('xmlns:jdftyp', 'http://www.CIP4.org/JDFSchema_1_1_Types');
-        $root->addAttribute('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance');
-
-        // Register the namespace.
-        $root->registerXPathNamespace('xsi', $xmlns_xsi);
         $this->root = $root;
 
         $this->setAuditMessage();
