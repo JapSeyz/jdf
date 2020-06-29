@@ -60,18 +60,18 @@ class JDF extends BaseJDF
 
     protected function setSensibleDefaults()
     {
-        $component = $this->resourcePool()->component();
+        $component = $this->resourcePool()->addChild('Component');
         $component->addAttribute('Class', 'Quantity');
         $component->addAttribute('ComponentType', 'FinalProduct');
         $component->addAttribute('ID', 'C1');
         $component->addAttribute('Status', 'Available');
 
-        $digialPrintingParams = $this->resourcePool()->digitalPrintingParams();
+        $digialPrintingParams = $this->resourcePool()->addChild('DigitalPrintingParams');
         $digialPrintingParams->addAttribute('Class', 'Parameter');
         $digialPrintingParams->addAttribute('ID', 'DP1');
         $digialPrintingParams->addAttribute('Status', 'Available');
 
-        $layoutPreparationParams = $this->resourcePool()->layoutPreparationParams();
+        $layoutPreparationParams = $this->resourcePool()->addChild('LayoutPreparationParams');
         $layoutPreparationParams->addAttribute('Class', 'Parameter');
         $layoutPreparationParams->addAttribute('ID', 'LPP1');
         $layoutPreparationParams->addAttribute('Status', 'Available');
