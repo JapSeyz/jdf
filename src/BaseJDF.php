@@ -110,7 +110,6 @@ class BaseJDF
         // Initialize the JMF or JDF root node
         $root = new SimpleXMLElement($xml_encoding . '<JDF/>', \LIBXML_NOEMPTYTAG);
         $root->addAttribute('Activation', 'Active');
-        $root->addAttribute('DescriptiveName', $this->name);
         $root->addAttribute('ID', 'ID1');
         $root->addAttribute('JobID', 'J_000000');
         $root->addAttribute('JobPartID', 'n_000015');

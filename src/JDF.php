@@ -15,6 +15,8 @@ class JDF extends BaseJDF
      */
     protected $root_nodes = ['ResourcePool', 'ResourceLinkPool'];
 
+    protected $name;
+
     /**
      * JDF constructor.
      */
@@ -23,6 +25,13 @@ class JDF extends BaseJDF
         parent::__construct();
         $this->initialiseMessage();
         $this->setSensibleDefaults();
+    }
+
+    public function setName(string $name): self
+    {
+        $this->root->addAttribute('DescriptiveName', $name);
+
+        return $this;
     }
 
     /**
